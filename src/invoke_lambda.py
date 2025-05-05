@@ -44,12 +44,12 @@ with open("invocation_log.csv", "w", newline="") as f:
         readable_time = timestamp.strftime('%Y-%m-%d %H:%M:%S')
         delay = get_delay_based_on_time()
 
-        print(f"🔁 Invocation {i+1}/{NUM_INVOCATIONS}")
-        print(f"🕒 {readable_time} UTC | Hour: {hour} | ⏳ Next Delay: {delay} seconds")
+        print(f" Invocation {i+1}/{NUM_INVOCATIONS}")
+        print(f" {readable_time} UTC | Hour: {hour} | Next Delay: {delay} seconds")
 
         # Invoke the Lambda
         status = invoke_lambda()
-        print(f"✅ Lambda Invoked — Status Code: {status}\n")
+        print(f" Lambda Invoked — Status Code: {status}\n")
 
         # Log the details to CSV
         writer.writerow([i+1, readable_time, delay, hour])
@@ -57,4 +57,4 @@ with open("invocation_log.csv", "w", newline="") as f:
         # Wait for the next invocation
         time.sleep(delay)
 
-print("🏁 Simulation complete. Invocation data saved to invocation_log.csv.")
+print(" Simulation complete. Invocation data saved to invocation_log.csv.")

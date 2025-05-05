@@ -34,4 +34,4 @@ with open("cold_start_data.csv", "w", newline="") as file:
     writer.writerow(["Timestamp (UTC)", "Cold Start Duration (ms)"])
     writer.writerows(cold_start_data)
 
-print(f"✅ Cold start data saved to cold_start_data.csv | Total rows: {len(cold_start_data)}")
+print(f" Cold start data saved to cold_start_data.csv | Total rows: {len(cold_start_data)}")

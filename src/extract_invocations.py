@@ -39,4 +39,4 @@ with open("invocation_log.csv", "w", newline="") as f:
     writer.writerow(["Timestamp (UTC)", "Delay (s)"])
     writer.writerows(rows)
 
-print(f"✅ Extracted {len(rows)} total invocations to invocation_log.csv")
+print(f" Extracted {len(rows)} total invocations to invocation_log.csv")

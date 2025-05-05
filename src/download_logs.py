@@ -21,4 +21,4 @@ for page in pages:
 with open("lambda_logs.json", "w", encoding="utf-8") as f:
     json.dump(all_events, f, indent=2)
 
-print(f"✅ Downloaded {len(all_events)} log events to lambda_logs.json")
+print(f" Downloaded {len(all_events)} log events to lambda_logs.json")
