@@ -19,13 +19,13 @@ with open("invocation_log.csv", "w", newline="") as f:
     writer.writerow(["Invocation #", "Timestamp (UTC)", "Delay (sec)", "Hour (UTC)"])
 
     def get_delay_based_on_time():
-        """Return a delay based on current UTC hour."""
+        
         current_hour = datetime.utcnow().hour
 
-        # Peak traffic hours (9 AM to 6 PM UTC) → simulate frequent usage (warm starts)
+        # Peak traffic hours (9 AM to 6 PM UTC)
         if 9 <= current_hour < 18:
             return random.choice([1, 2, 3, 5, 10, 15, 20])
-        # Off-peak hours (6 PM to 9 AM UTC) → simulate idle periods (cold starts)
+        # Off-peak hours (6 PM to 9 AM UTC
         else:
             return random.choice([30, 60, 120, 300, 420, 600, 900]) 
 
