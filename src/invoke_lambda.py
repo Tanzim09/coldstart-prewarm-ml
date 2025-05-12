@@ -4,16 +4,16 @@ import random
 import csv
 from datetime import datetime
 
-# Your Lambda function name
+# Lambda function name
 FUNCTION_NAME = "lambda_cold_ai"
 
-# How many times you want to invoke it
-NUM_INVOCATIONS = 2000  # You can increase or reduce this as needed
 
-# Create a Lambda client
+NUM_INVOCATIONS = 2000  
+
+
 lambda_client = boto3.client("lambda")
 
-# Open a CSV file to log invocation details
+
 with open("invocation_log.csv", "w", newline="") as f:
     writer = csv.writer(f)
     writer.writerow(["Invocation #", "Timestamp (UTC)", "Delay (sec)", "Hour (UTC)"])
@@ -57,4 +57,4 @@ with open("invocation_log.csv", "w", newline="") as f:
         # Wait for the next invocation
         time.sleep(delay)
 
-print(" Simulation complete. Invocation data saved to invocation_log.csv.")
+
